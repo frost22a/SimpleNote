@@ -37,6 +37,10 @@
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonRead = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
+            this.buttonSaveToFile = new System.Windows.Forms.Button();
+            this.buttonLoadFromFile = new System.Windows.Forms.Button();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -92,7 +96,7 @@
             // 
             this.buttonNew.Location = new System.Drawing.Point(102, 376);
             this.buttonNew.Name = "buttonNew";
-            this.buttonNew.Size = new System.Drawing.Size(75, 23);
+            this.buttonNew.Size = new System.Drawing.Size(75, 30);
             this.buttonNew.TabIndex = 5;
             this.buttonNew.Text = "New";
             this.buttonNew.UseVisualStyleBackColor = true;
@@ -102,7 +106,7 @@
             // 
             this.buttonSave.Location = new System.Drawing.Point(259, 376);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 23);
+            this.buttonSave.Size = new System.Drawing.Size(75, 30);
             this.buttonSave.TabIndex = 6;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -112,7 +116,7 @@
             // 
             this.buttonRead.Location = new System.Drawing.Point(427, 376);
             this.buttonRead.Name = "buttonRead";
-            this.buttonRead.Size = new System.Drawing.Size(75, 23);
+            this.buttonRead.Size = new System.Drawing.Size(75, 30);
             this.buttonRead.TabIndex = 7;
             this.buttonRead.Text = "Read";
             this.buttonRead.UseVisualStyleBackColor = true;
@@ -122,17 +126,53 @@
             // 
             this.buttonDelete.Location = new System.Drawing.Point(588, 376);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(75, 23);
+            this.buttonDelete.Size = new System.Drawing.Size(75, 30);
             this.buttonDelete.TabIndex = 8;
             this.buttonDelete.Text = "Delete";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
+            // buttonSaveToFile
+            // 
+            this.buttonSaveToFile.Location = new System.Drawing.Point(670, 158);
+            this.buttonSaveToFile.Name = "buttonSaveToFile";
+            this.buttonSaveToFile.Size = new System.Drawing.Size(118, 30);
+            this.buttonSaveToFile.TabIndex = 5;
+            this.buttonSaveToFile.Text = "Save to file";
+            this.buttonSaveToFile.UseVisualStyleBackColor = true;
+            this.buttonSaveToFile.Click += new System.EventHandler(this.buttonSaveToFile_Click);
+            // 
+            // buttonLoadFromFile
+            // 
+            this.buttonLoadFromFile.Location = new System.Drawing.Point(670, 217);
+            this.buttonLoadFromFile.Name = "buttonLoadFromFile";
+            this.buttonLoadFromFile.Size = new System.Drawing.Size(118, 30);
+            this.buttonLoadFromFile.TabIndex = 5;
+            this.buttonLoadFromFile.Text = "Open file";
+            this.buttonLoadFromFile.UseVisualStyleBackColor = true;
+            this.buttonLoadFromFile.Click += new System.EventHandler(this.buttonLoadFromFile_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.DefaultExt = "\"txt\"";
+            this.openFileDialog1.FileName = "data";
+            this.openFileDialog1.Filter = "\"txt files (*.txt)|*.txt|All files (*.*)|*.*\"";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.CheckFileExists = true;
+            this.saveFileDialog1.DefaultExt = "\"txt\"";
+            this.saveFileDialog1.Filter = "\"txt files (*.txt)|*.txt|All files (*.*)|*.*\"";
+            this.saveFileDialog1.RestoreDirectory = true;
+            this.saveFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.saveFileDialog1_FileOk);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonLoadFromFile);
+            this.Controls.Add(this.buttonSaveToFile);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonRead);
             this.Controls.Add(this.buttonSave);
@@ -142,7 +182,7 @@
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Simple Note";
+            this.Name = "Form1";
             this.Text = "Simple Note";
             this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -162,6 +202,10 @@
         private System.Windows.Forms.Button buttonSave;
         private System.Windows.Forms.Button buttonRead;
         private System.Windows.Forms.Button buttonDelete;
+        private System.Windows.Forms.Button buttonSaveToFile;
+        private System.Windows.Forms.Button buttonLoadFromFile;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }
 
